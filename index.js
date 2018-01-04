@@ -26,6 +26,9 @@ module.exports = postcss.plugin('postcss-theme-colors', options => {
   const reGroup = new RegExp(`\\b${options.function}\\(([^)]+)\\)`, 'g')
 
   return (style, result) => {
+    const hasPlugin = name =>
+      result.processor.plugins.some(p => p.postcssPlugin === name)
+
     style.walkDecls(decl => {
       const value = decl.value
       if (!value || !reGroup.test(value)) {
@@ -45,12 +48,24 @@ module.exports = postcss.plugin('postcss-theme-colors', options => {
         return resolveColor(options, 'dark', group, match)
       })
       const darkDecl = decl.clone({value: darkValue})
-      const darkRule = postcss.rule({
-        // TODO: support postcss-nesting?
-        selector: `html[data-theme="dark"] &`,
-      })
-      darkRule.append(darkDecl)
-      decl.parent.append(darkRule)
+      let darkRule
+      if (hasPlugin('postcss-nesting')) {
+        darkRule = postcss.atRule({
+          name: 'nest',
+          params: 'html[data-theme="dark"] &',
+        })
+      } else if (hasPlugin('postcss-nested')) {
+        darkRule = postcss.rule({
+          selector: `html[data-theme="dark"] &`,
+        })
+      } else {
+        decl.warn(result, `Plugin(postcss-nesting or postcss-nested) not found`)
+      }
+
+      if (darkRule) {
+        darkRule.append(darkDecl)
+        decl.parent.append(darkRule)
+      }
 
       const lightDecl = decl.clone({value: lightValue})
       decl.replaceWith(lightDecl)

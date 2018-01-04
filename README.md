@@ -5,7 +5,12 @@ Theming with `cc()`.
 ## Installation
 
 ```console
-npm install postcss-theme-colors
+npm install postcss-theme-colors postcss-nested
+
+# or if you are using postcss-nesting
+# npm install postcss-theme-colors postcss-nesting
+# or postcss-cssnext
+# npm install postcss-theme-colors postcss-cssnext
 ```
 
 ## Usage
@@ -25,11 +30,11 @@ Output:
 a {
   color: #eee;
   background-color: rgba(238, 238, 238, 0.92);
+}
 
-  html[data-theme='dark'] & {
-    color: #111;
-    background-color: rgba(17, 17, 17, 0.92);
-  }
+html[data-theme='dark'] a {
+  color: #111;
+  background-color: rgba(17, 17, 17, 0.92);
 }
 ```
 
@@ -47,7 +52,7 @@ const groups = {
 
 postcss([
   require('postcss-theme-colors')({colors, groups}),
-  require('postcss-nested'),
+  require('postcss-nested'), // or postcss-nesting, postcss-cssnext
   // require('postcss-custom-properties')({variables: colors}), // optional
   // require('postcss-color-function'), // optional
 ]).process(css)
