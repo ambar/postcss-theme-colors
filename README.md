@@ -47,6 +47,7 @@ const groups = {
 
 postcss([
   require('postcss-theme-colors')({colors, groups}),
+  require('postcss-nested'),
   // require('postcss-custom-properties')({variables: colors}), // optional
   // require('postcss-color-function'), // optional
 ]).process(css)

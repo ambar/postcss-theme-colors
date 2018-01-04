@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`postcss-theme-colors expand nested rules 1`] = `"a { color: #eee; } html[data-theme=\\"dark\\"] a { color: #111; }"`;
+
 exports[`postcss-theme-colors process color function 1`] = `
 "a {
       background-color: rgba(238, 238, 238, 0.92);

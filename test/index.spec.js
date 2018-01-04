@@ -13,12 +13,14 @@ const groups = {
   G02: ['C03', 'C04'],
 }
 
-const process = (css, options, variables = {}) => {
-  return postcss([
-    themeColors(Object.assign({colors, groups}, options)),
-    require('postcss-custom-properties')({variables}),
-    require('postcss-color-function'),
-  ]).process(css)
+const process = (css, options, variables = {}, plugins = []) => {
+  return postcss(
+    [
+      themeColors(Object.assign({colors, groups}, options)),
+      require('postcss-custom-properties')({variables}),
+      require('postcss-color-function'),
+    ].concat(plugins)
+  ).process(css)
 }
 
 describe('postcss-theme-colors', () => {
@@ -100,5 +102,11 @@ describe('postcss-theme-colors', () => {
         }
       ).css
     ).toMatchSnapshot('apply `var()` plugin')
+  })
+
+  it('expand nested rules', () => {
+    expect(
+      process(`a { color: cc(G01) }`, null, null, require('postcss-nested')).css
+    ).toMatchSnapshot()
   })
 })
