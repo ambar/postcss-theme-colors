@@ -1,0 +1,21 @@
+{
+  "name": "postcss-theme-colors",
+  "version": "0.0.1",
+  "description": "Theming with cc()",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch --notify"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "postcss": ">=6.0.0",
+    "postcss-custom-properties": ">=6.0.0"
+  },
+  "devDependencies": {
+    "jest": "^22.0.4",
+    "postcss": "^6.0.15",
+    "postcss-color-function": "^4.0.1",
+    "postcss-custom-properties": "^6.2.0"
+  }
+}

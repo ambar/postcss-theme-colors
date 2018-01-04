@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`postcss-theme-colors process color function 1`] = `
+"a {
+      background-color: rgba(238, 238, 238, 0.92);
+      html[data-theme=\\"dark\\"] & {
+      background-color: rgba(17, 17, 17, 0.92)
+      }
+    }"
+`;
+
+exports[`postcss-theme-colors process multiple value 1`] = `
+"a {
+      box-shadow: 0 0 0 2px #eee, 0 0 0 4px #f00;
+      html[data-theme=\\"dark\\"] & {
+      box-shadow: 0 0 0 2px #111, 0 0 0 4px #0f0
+      }
+    }"
+`;
+
+exports[`postcss-theme-colors process nested rules 1`] = `
+"a {
+      span {
+        color: #eee;
+        html[data-theme=\\"dark\\"] & {
+        color: #111
+            }
+      }
+    }"
+`;
+
+exports[`postcss-theme-colors process single value 1`] = `
+"a {
+      color: #eee;
+      html[data-theme=\\"dark\\"] & {
+      color: #111
+      }
+    }"
+`;
+
+exports[`postcss-theme-colors process with custom function name 1`] = `
+"a {
+      border: 1px solid #eee;
+      html[data-theme=\\"dark\\"] & {
+      border: 1px solid #111
+      }
+    }"
+`;
+
+exports[`postcss-theme-colors process with custom properties: apply \`var()\` plugin 1`] = `"a { color: #eee; html[data-theme=\\"dark\\"] & { color: #111 } }"`;
+
+exports[`postcss-theme-colors process with custom properties: with \`--\` prefix 1`] = `"a { color: var(--C01A); html[data-theme=\\"dark\\"] & { color: var(--C01B) } }"`;
+
+exports[`postcss-theme-colors process with custom properties: without \`--\` prefix 1`] = `"a { color: var(--C01); html[data-theme=\\"dark\\"] & { color: var(--C02) } }"`;
