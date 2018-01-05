@@ -3,6 +3,9 @@
   "version": "0.0.2",
   "description": "Theming with cc()",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch --notify"
