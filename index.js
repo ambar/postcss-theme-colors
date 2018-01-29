@@ -5,6 +5,7 @@ const defaults = {
   groups: {},
   colors: {},
   useCustomProperties: false,
+  darkThemeSelector: 'html[data-theme="dark"]',
 }
 
 const resolveColor = (options, theme, group, defaultValue) => {
@@ -52,11 +53,11 @@ module.exports = postcss.plugin('postcss-theme-colors', options => {
       if (hasPlugin('postcss-nesting')) {
         darkRule = postcss.atRule({
           name: 'nest',
-          params: 'html[data-theme="dark"] &',
+          params: `${options.darkThemeSelector} &`,
         })
       } else if (hasPlugin('postcss-nested')) {
         darkRule = postcss.rule({
-          selector: `html[data-theme="dark"] &`,
+          selector: `${options.darkThemeSelector} &`,
         })
       } else {
         decl.warn(result, `Plugin(postcss-nesting or postcss-nested) not found`)
