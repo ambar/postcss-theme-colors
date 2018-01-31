@@ -112,7 +112,7 @@ describe('postcss-theme-colors', () => {
     expect(
       process(
         `a { color: cc(G01) }`,
-        {usePostCSSNesting: true, darkThemeSelector: '.theme-dark'},
+        {darkThemeSelector: '.theme-dark'},
         null,
         'postcss-nesting'
       ).css
@@ -123,7 +123,7 @@ describe('postcss-theme-colors', () => {
     expect(
       process(
         `a { color: cc(G01) }`,
-        {usePostCSSNesting: true},
+        {},
         null,
         'postcss-nesting'
       ).css
