@@ -7,8 +7,10 @@
     "index.js"
   ],
   "scripts": {
+    "prepare": "npm test",
     "test": "jest",
-    "test:watch": "jest --watch --notify"
+    "test:watch": "jest --watch --notify",
+    "release": "standard-version"
   },
   "license": "MIT",
   "peerDependencies": {
