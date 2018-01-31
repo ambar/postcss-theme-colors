@@ -1,6 +1,6 @@
 {
   "name": "postcss-theme-colors",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Theming with cc()",
   "main": "index.js",
   "files": [
