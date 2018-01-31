@@ -65,3 +65,4 @@ postcss([
   * `groups: Object`, group definitions.
   * `function: string`, function name, defaults to `cc`.
   * `useCustomProperties: boolean`, whether to transform `cc(group)` to `var(color)`, defaults to `false`.
+  * `darkThemeSelector: string`, dark theme selector, defaults to `html[data-theme="dark"]`.

@@ -108,11 +108,22 @@ describe('postcss-theme-colors', () => {
     ).toMatchSnapshot('apply `var()` plugin')
   })
 
+  it('process with custom root class of dark theme', () => {
+    expect(
+      process(
+        `a { color: cc(G01) }`,
+        {darkThemeSelector: '.theme-dark'},
+        null,
+        'postcss-nesting'
+      ).css
+    ).toMatchSnapshot()
+  })
+
   it('expand postcss-nesting rules', () => {
     expect(
       process(
         `a { color: cc(G01) }`,
-        {usePostCSSNesting: true},
+        {},
         null,
         'postcss-nesting'
       ).css
