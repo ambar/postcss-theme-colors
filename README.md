@@ -9,8 +9,9 @@ npm install postcss-theme-colors postcss-nested
 
 # or if you are using postcss-nesting
 # npm install postcss-theme-colors postcss-nesting
-# or postcss-cssnext
-# npm install postcss-theme-colors postcss-cssnext
+
+# or postcss-preset-env
+# npm install postcss-theme-colors postcss-preset-env
 ```
 
 ## Usage
@@ -52,7 +53,7 @@ const groups = {
 
 postcss([
   require('postcss-theme-colors')({colors, groups}),
-  require('postcss-nested'), // or postcss-nesting, postcss-cssnext
+  require('postcss-nested'), // or postcss-nesting, postcss-preset-env
   // require('postcss-custom-properties')({variables: colors}), // optional
   // require('postcss-color-function'), // optional
 ]).process(css)
@@ -60,9 +61,9 @@ postcss([
 
 ### Plugin Options
 
-* `options: Object`
-  * `colors: Object`, color definitions.
-  * `groups: Object`, group definitions.
-  * `function: string`, function name, defaults to `cc`.
-  * `useCustomProperties: boolean`, whether to transform `cc(group)` to `var(color)`, defaults to `false`.
-  * `darkThemeSelector: string`, dark theme selector, defaults to `html[data-theme="dark"]`.
+- `options: Object`
+  - `colors: Object`, color definitions.
+  - `groups: Object`, group definitions.
+  - `function: string`, function name, defaults to `cc`.
+  - `useCustomProperties: boolean`, whether to transform `cc(group)` to `var(color)`, defaults to `false`.
+  - `darkThemeSelector: string`, dark theme selector, defaults to `html[data-theme="dark"]`.
