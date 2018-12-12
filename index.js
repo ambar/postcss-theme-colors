@@ -6,6 +6,7 @@ const defaults = {
   colors: {},
   useCustomProperties: false,
   darkThemeSelector: 'html[data-theme="dark"]',
+  nestingPlugin: null,
 }
 
 const resolveColor = (options, theme, group, defaultValue) => {
@@ -28,6 +29,7 @@ module.exports = postcss.plugin('postcss-theme-colors', options => {
 
   return (style, result) => {
     const hasPlugin = name =>
+      name.replace(/^postcss-/, '') === options.nestingPlugin ||
       result.processor.plugins.some(p => p.postcssPlugin === name)
 
     style.walkDecls(decl => {

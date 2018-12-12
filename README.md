@@ -67,3 +67,4 @@ postcss([
   - `function: string`, function name, defaults to `cc`.
   - `useCustomProperties: boolean`, whether to transform `cc(group)` to `var(color)`, defaults to `false`.
   - `darkThemeSelector: string`, dark theme selector, defaults to `html[data-theme="dark"]`.
+  - `nestingPlugin: string | null`, specific the nesting plugin (`'nested'` or `'nesting'`), will detect automatically by default.

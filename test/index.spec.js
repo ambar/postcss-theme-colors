@@ -135,4 +135,26 @@ describe('postcss-theme-colors', () => {
     expect(result.css).toBe('a { color: #eee }')
     expect(result.messages).toMatchObject([{type: 'warning'}])
   })
+
+  it('use `nestingPlugin` option', async () => {
+    const process = (css, nestingPlugin) =>
+      postcss([themeColors({colors, groups, nestingPlugin})]).process(css)
+    const cases = [
+      [
+        'nested',
+        `a { color: cc(G01) }`,
+        'a { color: #eee; html[data-theme="dark"] & { color: #111 } }',
+      ],
+      [
+        'nesting',
+        `a { color: cc(G01) }`,
+        'a { color: #eee; @nest html[data-theme="dark"] & { color: #111 } }',
+      ],
+      [null, `a { color: cc(G01) }`, 'a { color: #eee }'],
+    ]
+    for (const [nestingPlugin, input, output] of cases) {
+      const result = await process(input, nestingPlugin)
+      expect(result.css).toBe(output)
+    }
+  })
 })
