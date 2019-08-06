@@ -67,7 +67,7 @@ module.exports = postcss.plugin('postcss-theme-colors', options => {
 
       if (darkRule) {
         darkRule.append(darkDecl)
-        decl.parent.append(darkRule)
+        decl.after(darkRule)
       }
 
       const lightDecl = decl.clone({value: lightValue})
