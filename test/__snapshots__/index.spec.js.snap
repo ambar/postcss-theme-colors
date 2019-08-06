@@ -14,6 +14,21 @@ exports[`postcss-theme-colors process color function 1`] = `
 }"
 `;
 
+exports[`postcss-theme-colors process in correct order 1`] = `
+".element {
+      color: #eee;
+    }
+      html[data-theme=\\"dark\\"] .element {
+      color: #111;
+}
+      .element--modifier {
+        color: #f00;
+      }
+      html[data-theme=\\"dark\\"] .element--modifier {
+        color: #0f0;
+}"
+`;
+
 exports[`postcss-theme-colors process multiple value 1`] = `
 "a {
       box-shadow: 0 0 0 2px #eee, 0 0 0 4px #f00;

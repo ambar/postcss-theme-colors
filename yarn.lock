@@ -294,7 +294,7 @@ babel-helpers@^6.24.1:
 
 babel-jest@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/babel-jest/-/babel-jest-22.1.0.tgz#7fae6f655fffe77e818a8c2868c754a42463fdfd"
+  resolved "http://registry.yarnpkg.com/babel-jest/-/babel-jest-22.1.0.tgz#7fae6f655fffe77e818a8c2868c754a42463fdfd"
   integrity sha512-5pKRFTlDr+x1JESNRd5leqvxEJk3dRwVvIXikB6Lr4BWZbBppk1Wp+BLUzxWL8tM+EYGLCWgfqkD35Sft8r8Lw==
   dependencies:
     babel-plugin-istanbul "^4.1.5"
@@ -318,7 +318,7 @@ babel-plugin-istanbul@^4.1.5:
 
 babel-plugin-jest-hoist@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-22.1.0.tgz#c1281dd7887d77a1711dc760468c3b8285dde9ee"
+  resolved "http://registry.yarnpkg.com/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-22.1.0.tgz#c1281dd7887d77a1711dc760468c3b8285dde9ee"
   integrity sha512-Og5sjbOZc4XUI3njqwYhS6WLTlHQUJ/y5+dOqmst8eHrozYZgT4OMzAaYaxhk75c2fBVYwn7+mNEN97XDO7cOw==
 
 babel-plugin-syntax-object-rest-spread@^6.13.0:
@@ -328,7 +328,7 @@ babel-plugin-syntax-object-rest-spread@^6.13.0:
 
 babel-preset-jest@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/babel-preset-jest/-/babel-preset-jest-22.1.0.tgz#ff4e704102f9642765e2254226050561d8942ec9"
+  resolved "http://registry.yarnpkg.com/babel-preset-jest/-/babel-preset-jest-22.1.0.tgz#ff4e704102f9642765e2254226050561d8942ec9"
   integrity sha512-ps2UYz7IQpP2IgZ41tJjUuUDTxJioprHXD8fi9DoycKDGNqB3nAX/ggy1S3plaQd43ktBvMS1FkkyGNoBujFpg==
   dependencies:
     babel-plugin-jest-hoist "^22.1.0"
@@ -1092,7 +1092,7 @@ execa@^0.7.0:
 
 exit@^0.1.2:
   version "0.1.2"
-  resolved "http://npm.prod.hulu.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
+  resolved "http://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
   integrity sha1-BjJjj42HfMghB9MKD/8aF8uhzQw=
 
 expand-brackets@^0.1.4:
@@ -1111,7 +1111,7 @@ expand-range@^1.8.1:
 
 expect@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/expect/-/expect-22.1.0.tgz#f8f9b019ab275d859cbefed531fbaefe8972431d"
+  resolved "http://registry.yarnpkg.com/expect/-/expect-22.1.0.tgz#f8f9b019ab275d859cbefed531fbaefe8972431d"
   integrity sha512-8K+8TjNnZq73KYtqNWKWTbYbN8z4loeL+Pn2bqpmtTdBtLNXJtpz9vkUcQlFsgKMDRA3VM8GXRA6qbV/oBF7Bw==
   dependencies:
     ansi-styles "^3.2.0"
@@ -1570,7 +1570,7 @@ iconv-lite@0.4.19:
 
 import-local@^1.0.0:
   version "1.0.0"
-  resolved "http://npm.prod.hulu.com/import-local/-/import-local-1.0.0.tgz#5e4ffdc03f4fe6c009c6729beb29631c2f8227bc"
+  resolved "http://registry.yarnpkg.com/import-local/-/import-local-1.0.0.tgz#5e4ffdc03f4fe6c009c6729beb29631c2f8227bc"
   integrity sha512-vAaZHieK9qjGo58agRBg+bhHX3hoTZU/Oa3GESWLz7t1U62fk63aHuDJJEteXoDeTCcPmUT+z38gkHPZkkmpmQ==
   dependencies:
     pkg-dir "^2.0.0"
@@ -1700,7 +1700,7 @@ is-fullwidth-code-point@^2.0.0:
 
 is-generator-fn@^1.0.0:
   version "1.0.0"
-  resolved "http://npm.prod.hulu.com/is-generator-fn/-/is-generator-fn-1.0.0.tgz#969d49e1bb3329f6bb7f09089be26578b2ddd46a"
+  resolved "http://registry.yarnpkg.com/is-generator-fn/-/is-generator-fn-1.0.0.tgz#969d49e1bb3329f6bb7f09089be26578b2ddd46a"
   integrity sha1-lp1J4bszKfa7fwkIm+JleLLd1Go=
 
 is-glob@^2.0.0, is-glob@^2.0.1:
@@ -1872,14 +1872,14 @@ istanbul-reports@^1.1.3:
 
 jest-changed-files@^22.1.4:
   version "22.1.4"
-  resolved "http://npm.prod.hulu.com/jest-changed-files/-/jest-changed-files-22.1.4.tgz#1f7844bcb739dec07e5899a633c0cb6d5069834e"
+  resolved "http://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-22.1.4.tgz#1f7844bcb739dec07e5899a633c0cb6d5069834e"
   integrity sha512-EpqJhwt+N/wEHRT+5KrjagVrunduOfMgAb7fjjHkXHFCPRZoVZwl896S7krx7txf5hrMNUkpECnOnO2wBgzJCw==
   dependencies:
     throat "^4.0.0"
 
 jest-cli@^22.1.4:
   version "22.1.4"
-  resolved "http://npm.prod.hulu.com/jest-cli/-/jest-cli-22.1.4.tgz#0fe9f3ac881b0cdc00227114c58583a2ebefcc04"
+  resolved "http://registry.yarnpkg.com/jest-cli/-/jest-cli-22.1.4.tgz#0fe9f3ac881b0cdc00227114c58583a2ebefcc04"
   integrity sha512-p7yOu0Q5uuXb3Q93qEg3LE6eNGgAGueakifxXNEqQx4b0lOl2YlC9t6BLQWNOJ+z42VWK/BIdFjf6lxKcTkjFA==
   dependencies:
     ansi-escapes "^3.0.0"
@@ -1918,7 +1918,7 @@ jest-cli@^22.1.4:
 
 jest-config@^22.1.4:
   version "22.1.4"
-  resolved "http://npm.prod.hulu.com/jest-config/-/jest-config-22.1.4.tgz#075ffacce83c3e38cf85b1b9ba0d21bd3ee27ad0"
+  resolved "http://registry.yarnpkg.com/jest-config/-/jest-config-22.1.4.tgz#075ffacce83c3e38cf85b1b9ba0d21bd3ee27ad0"
   integrity sha512-ZImFp7STrUDOgQLW5I5UloCiCRMh6HmMIYIoWqaQkxnR5ws7MuZFG/Ns9sZFyfrnyWCvcW91e+XcEfNeoa4Jew==
   dependencies:
     chalk "^2.0.1"
@@ -1935,7 +1935,7 @@ jest-config@^22.1.4:
 
 jest-diff@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/jest-diff/-/jest-diff-22.1.0.tgz#0fad9d96c87b453896bf939df3dc8aac6919ac38"
+  resolved "http://registry.yarnpkg.com/jest-diff/-/jest-diff-22.1.0.tgz#0fad9d96c87b453896bf939df3dc8aac6919ac38"
   integrity sha512-lowdbU/dzXh+2/MR5QcvU5KPNkO4JdAEYw0PkQCbIQIuy5+g3QZBuVhWh8179Fmpg4CQrz1WgoK/yQHDCHbqqw==
   dependencies:
     chalk "^2.0.1"
@@ -1945,14 +1945,14 @@ jest-diff@^22.1.0:
 
 jest-docblock@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/jest-docblock/-/jest-docblock-22.1.0.tgz#3fe5986d5444cbcb149746eb4b07c57c5a464dfd"
+  resolved "http://registry.yarnpkg.com/jest-docblock/-/jest-docblock-22.1.0.tgz#3fe5986d5444cbcb149746eb4b07c57c5a464dfd"
   integrity sha512-/+OGgBVRJb5wCbXrB1LQvibQBz2SdrvDdKRNzY1gL+OISQJZCR9MOewbygdT5rVzbbkfhC4AR2x+qWmNUdJfjw==
   dependencies:
     detect-newline "^2.1.0"
 
 jest-environment-jsdom@^22.1.4:
   version "22.1.4"
-  resolved "http://npm.prod.hulu.com/jest-environment-jsdom/-/jest-environment-jsdom-22.1.4.tgz#704518ce8375f7ec5de048d1e9c4268b08a03e00"
+  resolved "http://registry.yarnpkg.com/jest-environment-jsdom/-/jest-environment-jsdom-22.1.4.tgz#704518ce8375f7ec5de048d1e9c4268b08a03e00"
   integrity sha512-YGqFJzei/kq5BgQ8su7igLoCl34ytUffr5ZoqwLrDzCmXUKyIiuwBFbWe3xFMG/crlDb1emhBXdzWM1yDEDw5Q==
   dependencies:
     jest-mock "^22.1.0"
@@ -1961,7 +1961,7 @@ jest-environment-jsdom@^22.1.4:
 
 jest-environment-node@^22.1.4:
   version "22.1.4"
-  resolved "http://npm.prod.hulu.com/jest-environment-node/-/jest-environment-node-22.1.4.tgz#0f2946e8f8686ce6c5d8fa280ce1cd8d58e869eb"
+  resolved "http://registry.yarnpkg.com/jest-environment-node/-/jest-environment-node-22.1.4.tgz#0f2946e8f8686ce6c5d8fa280ce1cd8d58e869eb"
   integrity sha512-rQmtzgZVdyCzeXsE8i7Alw2483KSd2PYjssZWZYeNzonN/lBeUjjaOCgLWp6FspBzSTnYF7x6cN4umGZxYAhow==
   dependencies:
     jest-mock "^22.1.0"
@@ -1969,12 +1969,12 @@ jest-environment-node@^22.1.4:
 
 jest-get-type@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/jest-get-type/-/jest-get-type-22.1.0.tgz#4e90af298ed6181edc85d2da500dbd2753e0d5a9"
+  resolved "http://registry.yarnpkg.com/jest-get-type/-/jest-get-type-22.1.0.tgz#4e90af298ed6181edc85d2da500dbd2753e0d5a9"
   integrity sha512-nD97IVOlNP6fjIN5i7j5XRH+hFsHL7VlauBbzRvueaaUe70uohrkz7pL/N8lx/IAwZRTJ//wOdVgh85OgM7g3w==
 
 jest-haste-map@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/jest-haste-map/-/jest-haste-map-22.1.0.tgz#1174c6ff393f9818ebf1163710d8868b5370da2a"
+  resolved "http://registry.yarnpkg.com/jest-haste-map/-/jest-haste-map-22.1.0.tgz#1174c6ff393f9818ebf1163710d8868b5370da2a"
   integrity sha512-vETdC6GboGlZX6+9SMZkXtYRQSKBbQ47sFF7NGglbMN4eyIZBODply8rlcO01KwBiAeiNCKdjUyfonZzJ93JEg==
   dependencies:
     fb-watchman "^2.0.0"
@@ -1986,7 +1986,7 @@ jest-haste-map@^22.1.0:
 
 jest-jasmine2@^22.1.4:
   version "22.1.4"
-  resolved "http://npm.prod.hulu.com/jest-jasmine2/-/jest-jasmine2-22.1.4.tgz#cada0baf50a220c616a9575728b80d4ddedebe8b"
+  resolved "http://registry.yarnpkg.com/jest-jasmine2/-/jest-jasmine2-22.1.4.tgz#cada0baf50a220c616a9575728b80d4ddedebe8b"
   integrity sha512-+KoRiG4PUwURB7UXei2jzxvbCebhXgTYS+xWl3FsSYUn3flcxdcOgAsFolx31Dkk/B1bVf1HIKt/B6Ubucp9aQ==
   dependencies:
     callsites "^2.0.0"
@@ -2003,14 +2003,14 @@ jest-jasmine2@^22.1.4:
 
 jest-leak-detector@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/jest-leak-detector/-/jest-leak-detector-22.1.0.tgz#08376644cee07103da069baac19adb0299b772c2"
+  resolved "http://registry.yarnpkg.com/jest-leak-detector/-/jest-leak-detector-22.1.0.tgz#08376644cee07103da069baac19adb0299b772c2"
   integrity sha512-8QsCWkncWAqdvrXN4yXQp9vgWF6CT3RkRey+d06SIHX913uXzAJhJdZyo6eE+uHVYMxUbxqW93npbUFhAR0YxA==
   dependencies:
     pretty-format "^22.1.0"
 
 jest-matcher-utils@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/jest-matcher-utils/-/jest-matcher-utils-22.1.0.tgz#e164665b5d313636ac29f7f6fe9ef0a6ce04febc"
+  resolved "http://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-22.1.0.tgz#e164665b5d313636ac29f7f6fe9ef0a6ce04febc"
   integrity sha512-Zn1OD9wVjILOdvRxgAnqiCN36OX6KJx+P2FHN+3lzQ0omG2N2OAguxE1QXuJJneG2yndlkXjekXFP254c0cSpw==
   dependencies:
     chalk "^2.0.1"
@@ -2019,7 +2019,7 @@ jest-matcher-utils@^22.1.0:
 
 jest-message-util@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/jest-message-util/-/jest-message-util-22.1.0.tgz#51ba0794cb6e579bfc4e9adfac452f9f1a0293fc"
+  resolved "http://registry.yarnpkg.com/jest-message-util/-/jest-message-util-22.1.0.tgz#51ba0794cb6e579bfc4e9adfac452f9f1a0293fc"
   integrity sha512-kftcoawOeOVUGuGWmMupJt7FGLK1pqOrh02FlJwtImmPGZ2yTWCTx2D+N/g95qD2jCbQ/ntH1goBixhAIIxL+g==
   dependencies:
     "@babel/code-frame" "^7.0.0-beta.35"
@@ -2030,24 +2030,24 @@ jest-message-util@^22.1.0:
 
 jest-mock@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/jest-mock/-/jest-mock-22.1.0.tgz#87ec21c0599325671c9a23ad0e05c86fb5879b61"
+  resolved "http://registry.yarnpkg.com/jest-mock/-/jest-mock-22.1.0.tgz#87ec21c0599325671c9a23ad0e05c86fb5879b61"
   integrity sha512-gL3/C8ds6e1PWiOTsV7sIejPP/ECYQgDbwMzbNCc+ZFPuPH3EpwsVLGmQqPK6okgnDagimbbQnss3kPJ8HCMtA==
 
 jest-regex-util@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/jest-regex-util/-/jest-regex-util-22.1.0.tgz#5daf2fe270074b6da63e5d85f1c9acc866768f53"
+  resolved "http://registry.yarnpkg.com/jest-regex-util/-/jest-regex-util-22.1.0.tgz#5daf2fe270074b6da63e5d85f1c9acc866768f53"
   integrity sha512-on0LqVS6Xeh69sw3d1RukVnur+lVOl3zkmb0Q54FHj9wHoq6dbtWqb3TSlnVUyx36hqjJhjgs/QLqs07Bzu72Q==
 
 jest-resolve-dependencies@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/jest-resolve-dependencies/-/jest-resolve-dependencies-22.1.0.tgz#340e4139fb13315cd43abc054e6c06136be51e31"
+  resolved "http://registry.yarnpkg.com/jest-resolve-dependencies/-/jest-resolve-dependencies-22.1.0.tgz#340e4139fb13315cd43abc054e6c06136be51e31"
   integrity sha512-76Ll61bD/Sus8wK8d+lw891EtiBJGJkWG8OuVDTEX0z3z2+jPujvQqSB2eQ+kCHyCsRwJ2PSjhn3UHqae/oEtA==
   dependencies:
     jest-regex-util "^22.1.0"
 
 jest-resolve@^22.1.4:
   version "22.1.4"
-  resolved "http://npm.prod.hulu.com/jest-resolve/-/jest-resolve-22.1.4.tgz#72b9b371eaac48f84aad4ad732222ffe37692602"
+  resolved "http://registry.yarnpkg.com/jest-resolve/-/jest-resolve-22.1.4.tgz#72b9b371eaac48f84aad4ad732222ffe37692602"
   integrity sha512-/HuCMeiTD6YJ+NF15bU1mal1r7Gov0GJozA7232XiYve7cOOnU2JwXBx3EQmcIuG38uNrRPjtgpiXkBqfnk4Og==
   dependencies:
     browser-resolve "^1.11.2"
@@ -2055,7 +2055,7 @@ jest-resolve@^22.1.4:
 
 jest-runner@^22.1.4:
   version "22.1.4"
-  resolved "http://npm.prod.hulu.com/jest-runner/-/jest-runner-22.1.4.tgz#e039039110cb1b31febc0f99e349bf7c94304a2f"
+  resolved "http://registry.yarnpkg.com/jest-runner/-/jest-runner-22.1.4.tgz#e039039110cb1b31febc0f99e349bf7c94304a2f"
   integrity sha512-HAyZ0Q2Fyk7mlbtbSKP75hNs9IP0Md7kzPUN1uNKbvQfZkXA/e7P0ttzAIGQtEbRx656tYwkfWNW+hXvs1i4/g==
   dependencies:
     exit "^0.1.2"
@@ -2072,7 +2072,7 @@ jest-runner@^22.1.4:
 
 jest-runtime@^22.1.4:
   version "22.1.4"
-  resolved "http://npm.prod.hulu.com/jest-runtime/-/jest-runtime-22.1.4.tgz#1474d9f5cda518b702e0b25a17d4ef3fc563a20c"
+  resolved "http://registry.yarnpkg.com/jest-runtime/-/jest-runtime-22.1.4.tgz#1474d9f5cda518b702e0b25a17d4ef3fc563a20c"
   integrity sha512-r/UjVuQppDRwbUprDlLYdd8MTYY+H8H6BCqRujGjo5/QyIt3b0hppNoOQHF+0bHNtuz/sR9chJ9HJ3A1fiv9Pw==
   dependencies:
     babel-core "^6.0.0"
@@ -2097,7 +2097,7 @@ jest-runtime@^22.1.4:
 
 jest-snapshot@^22.1.2:
   version "22.1.2"
-  resolved "http://npm.prod.hulu.com/jest-snapshot/-/jest-snapshot-22.1.2.tgz#b270cf6e3098f33aceeafda02b13eb0933dc6139"
+  resolved "http://registry.yarnpkg.com/jest-snapshot/-/jest-snapshot-22.1.2.tgz#b270cf6e3098f33aceeafda02b13eb0933dc6139"
   integrity sha512-45co/M0gTe6Y6yHaJLydEZKHOFpFHESLah40jW35DWd3pd7q188bsi0oUY4Kls7PDXUamvTWuTKTZXCtzwSvCw==
   dependencies:
     chalk "^2.0.1"
@@ -2109,7 +2109,7 @@ jest-snapshot@^22.1.2:
 
 jest-util@^22.1.4:
   version "22.1.4"
-  resolved "http://npm.prod.hulu.com/jest-util/-/jest-util-22.1.4.tgz#ac8cbd43ee654102f1941f3f0e9d1d789a8b6a9b"
+  resolved "http://registry.yarnpkg.com/jest-util/-/jest-util-22.1.4.tgz#ac8cbd43ee654102f1941f3f0e9d1d789a8b6a9b"
   integrity sha512-zM29idoVBPvmpsGubS7YmywVyPe4/m1wE2YhmKp0vVmrQmuby7ObuMqabp82EYlM0Rdp4GNEtaDamW9jg8lgTg==
   dependencies:
     callsites "^2.0.0"
@@ -2122,7 +2122,7 @@ jest-util@^22.1.4:
 
 jest-validate@^22.1.2:
   version "22.1.2"
-  resolved "http://npm.prod.hulu.com/jest-validate/-/jest-validate-22.1.2.tgz#c3b06bcba7bd9a850919fe336b5f2a8c3a239404"
+  resolved "http://registry.yarnpkg.com/jest-validate/-/jest-validate-22.1.2.tgz#c3b06bcba7bd9a850919fe336b5f2a8c3a239404"
   integrity sha512-IjvMsV7GW5ghg5PTQvU23zJqTBmnq10eY+4n47awUeXYEGH27N+JajFPOg6tsN+OYvEPsohPquKoqQ5XBVs/ow==
   dependencies:
     chalk "^2.0.1"
@@ -2132,14 +2132,14 @@ jest-validate@^22.1.2:
 
 jest-worker@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/jest-worker/-/jest-worker-22.1.0.tgz#0987832fe58fbdc205357f4c19b992446368cafb"
+  resolved "http://registry.yarnpkg.com/jest-worker/-/jest-worker-22.1.0.tgz#0987832fe58fbdc205357f4c19b992446368cafb"
   integrity sha512-ezLueYAQowk5N6g2J7bNZfq4NWZvMNB5Qd24EmOZLcM5SXTdiFvxykZIoNiMj9C98cCbPaojX8tfR7b1LJwNig==
   dependencies:
     merge-stream "^1.0.1"
 
 jest@^22.0.4:
   version "22.1.4"
-  resolved "http://npm.prod.hulu.com/jest/-/jest-22.1.4.tgz#9ec71373a38f40ff92a3e5e96ae85687c181bb72"
+  resolved "http://registry.yarnpkg.com/jest/-/jest-22.1.4.tgz#9ec71373a38f40ff92a3e5e96ae85687c181bb72"
   integrity sha512-cIPkn+OFGabazPesbhnYkadPftoO2Fo3w84QjeIP+A8eZ5qj7Zs4PuTemAW8StNMxySJr0KPk/LhYG2GUHLexQ==
   dependencies:
     jest-cli "^22.1.4"
@@ -2799,7 +2799,7 @@ pinkie@^2.0.0:
 
 pkg-dir@^2.0.0:
   version "2.0.0"
-  resolved "http://npm.prod.hulu.com/pkg-dir/-/pkg-dir-2.0.0.tgz#f6d5d1109e19d63edf428e0bd57e12777615334b"
+  resolved "http://registry.yarnpkg.com/pkg-dir/-/pkg-dir-2.0.0.tgz#f6d5d1109e19d63edf428e0bd57e12777615334b"
   integrity sha1-9tXREJ4Z1j7fQo4L1X4Sd3YVM0s=
   dependencies:
     find-up "^2.1.0"
@@ -2900,7 +2900,7 @@ preserve@^0.2.0:
 
 pretty-format@^22.1.0:
   version "22.1.0"
-  resolved "http://npm.prod.hulu.com/pretty-format/-/pretty-format-22.1.0.tgz#2277605b40ed4529ae4db51ff62f4be817647914"
+  resolved "http://registry.yarnpkg.com/pretty-format/-/pretty-format-22.1.0.tgz#2277605b40ed4529ae4db51ff62f4be817647914"
   integrity sha512-0HHR5hCmjDGU4sez3w5zRDAAwn7V0vT4SgPiYPZ1XDm5sT3Icb+Bh+fsOP3+Y3UwPjMr7TbRj+L7eQyMkPAxAw==
   dependencies:
     ansi-regex "^3.0.0"
@@ -3144,14 +3144,14 @@ require-main-filename@^1.0.1:
 
 resolve-cwd@^2.0.0:
   version "2.0.0"
-  resolved "http://npm.prod.hulu.com/resolve-cwd/-/resolve-cwd-2.0.0.tgz#00a9f7387556e27038eae232caa372a6a59b665a"
+  resolved "http://registry.yarnpkg.com/resolve-cwd/-/resolve-cwd-2.0.0.tgz#00a9f7387556e27038eae232caa372a6a59b665a"
   integrity sha1-AKn3OHVW4nA46uIyyqNypqWbZlo=
   dependencies:
     resolve-from "^3.0.0"
 
 resolve-from@^3.0.0:
   version "3.0.0"
-  resolved "http://npm.prod.hulu.com/resolve-from/-/resolve-from-3.0.0.tgz#b22c7af7d9d6881bc8b6e653335eebcb0a188748"
+  resolved "http://registry.yarnpkg.com/resolve-from/-/resolve-from-3.0.0.tgz#b22c7af7d9d6881bc8b6e653335eebcb0a188748"
   integrity sha1-six699nWiBvItuZTM17rywoYh0g=
 
 resolve@1.1.7:

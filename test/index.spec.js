@@ -68,6 +68,17 @@ describe('postcss-theme-colors', () => {
     expect((await process(input)).css).toMatchSnapshot()
   })
 
+  it('process in correct order', async () => {
+    const input = `.element {
+      color: cc(G01);
+
+      &--modifier {
+        color: cc(G02);
+      }
+    }`
+    expect((await process(input)).css).toMatchSnapshot()
+  })
+
   it('process undefined group', async () => {
     const input = `a {
       color: cc(GXX);
