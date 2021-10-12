@@ -5,13 +5,16 @@ exports[`postcss-theme-colors expand postcss-nesting rules 1`] = `
 html[data-theme=\\"dark\\"] a { color: #111 }"
 `;
 
-exports[`postcss-theme-colors process color function 1`] = `
-"a {
-      background-color: rgba(238, 238, 238, 0.92);
+exports[`postcss-theme-colors process color-mod functions 1`] = `
+"
+    a {
+      color: hsla(100, 0%, 60%, 8%);
+      border-color: hsla(100, 0%, 93.33333333333333%, .8);
     }
       html[data-theme=\\"dark\\"] a {
-      background-color: rgba(17, 17, 17, 0.92);
-}"
+      border-color: hsla(100, 0%, 6.666666666666667%, .8);
+}
+    "
 `;
 
 exports[`postcss-theme-colors process in correct order 1`] = `
@@ -21,9 +24,11 @@ exports[`postcss-theme-colors process in correct order 1`] = `
       html[data-theme=\\"dark\\"] .element {
       color: #111;
 }
+
       .element--modifier {
         color: #f00;
       }
+
       html[data-theme=\\"dark\\"] .element--modifier {
         color: #0f0;
 }"

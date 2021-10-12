@@ -21,7 +21,7 @@ Input:
 ```css
 a {
   color: cc(G01);
-  background-color: color(cc(G01) alpha(-8%));
+  background-color: alpha(cc(G01), 0.9));
 }
 ```
 
@@ -30,12 +30,12 @@ Output:
 ```css
 a {
   color: #eee;
-  background-color: rgba(238, 238, 238, 0.92);
+  background-color: rgba(238, 238, 238, 0.9);
 }
 
 html[data-theme='dark'] a {
   color: #111;
-  background-color: rgba(17, 17, 17, 0.92);
+  background-color: rgba(17, 17, 17, 0.9);
 }
 ```
 
@@ -55,8 +55,13 @@ postcss([
   require('postcss-theme-colors')({colors, groups}),
   require('postcss-nested'), // or postcss-nesting, postcss-preset-env
   // require('postcss-custom-properties')({variables: colors}), // optional
-  // require('postcss-color-function'), // optional
+  // require('postcss-functions')({functions: {alpha}}), // optional color adjusters
 ]).process(css)
+
+function alpha(input, v) {
+  const [h, s, l] = hex2hsl(input)
+  return `hsla(${h}, ${s}%, ${l}%, ${v})`
+}
 ```
 
 ### Plugin Options

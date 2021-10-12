@@ -1,3 +1,4 @@
+const {hex2hsl} = require('@csstools/convert-colors')
 const postcss = require('postcss')
 const themeColors = require('..')
 
@@ -13,6 +14,11 @@ const groups = {
   G02: ['C03', 'C04'],
 }
 
+function alpha(input, v) {
+  const [h, s, l] = hex2hsl(input)
+  return `hsla(${h}, ${s}%, ${l}%, ${v})`
+}
+
 const process = (
   css,
   options,
@@ -25,7 +31,10 @@ const process = (
       preserve: false,
       importFrom: {customProperties},
     }),
-    require('postcss-color-function'),
+    // NOTE: color-mod() 不兼容不再推荐 https://github.com/csstools/postcss-color-mod-function/issues/39
+    require('postcss-functions')({
+      functions: {alpha},
+    }),
     require(nestPlugin),
   ]).process(css)
 }
@@ -52,11 +61,20 @@ describe('postcss-theme-colors', () => {
     expect((await process(input)).css).toMatchSnapshot()
   })
 
-  it('process color function', async () => {
-    const input = `a {
-      background-color: color(cc(G01) alpha(-8%));
-    }`
-    expect((await process(input)).css).toMatchSnapshot()
+  it('process color-mod functions', async () => {
+    const input = `
+    a {
+      color: alpha(var(--myVar), 8%);
+      border-color: alpha(cc(G01), .8);
+    }
+    `
+    expect(
+      (
+        await process(input, null, {
+          '--myVar': '#999',
+        })
+      ).css
+    ).toMatchSnapshot()
   })
 
   it('process nested rules', async () => {
@@ -85,7 +103,11 @@ describe('postcss-theme-colors', () => {
     }`
     const result = await process(input)
     expect(result.css).toBe(input)
-    expect(result.messages).toMatchObject([{type: 'warning'}])
+    expect(result.messages).toMatchObject([
+      {type: 'warning'},
+      // https://github.com/csstools/postcss-plugins/discussions/192
+      {type: 'warning', plugin: 'postcss-custom-properties'},
+    ])
   })
 
   it('process with custom function name', async () => {
@@ -101,35 +123,41 @@ describe('postcss-theme-colors', () => {
     ).toMatchSnapshot('without `--` prefix')
 
     expect(
-      (await process(`a { color: cc(G01A) }`, {
-        groups: {G01A: ['--C01A', '--C01B']},
-        useCustomProperties: true,
-      })).css
+      (
+        await process(`a { color: cc(G01A) }`, {
+          groups: {G01A: ['--C01A', '--C01B']},
+          useCustomProperties: true,
+        })
+      ).css
     ).toMatchSnapshot('with `--` prefix')
 
     expect(
-      (await process(
-        `a { color: cc(G01A) }`,
-        {
-          groups: {G01A: ['--C01A', '--C01B']},
-          useCustomProperties: true,
-        },
-        {
-          '--C01A': '#eee',
-          '--C01B': '#111',
-        }
-      )).css
+      (
+        await process(
+          `a { color: cc(G01A) }`,
+          {
+            groups: {G01A: ['--C01A', '--C01B']},
+            useCustomProperties: true,
+          },
+          {
+            '--C01A': '#eee',
+            '--C01B': '#111',
+          }
+        )
+      ).css
     ).toMatchSnapshot('apply `var()` plugin')
   })
 
   it('process with custom root class of dark theme', async () => {
     expect(
-      (await process(
-        `a { color: cc(G01) }`,
-        {darkThemeSelector: '.theme-dark'},
-        null,
-        'postcss-nesting'
-      )).css
+      (
+        await process(
+          `a { color: cc(G01) }`,
+          {darkThemeSelector: '.theme-dark'},
+          null,
+          'postcss-nesting'
+        )
+      ).css
     ).toMatchSnapshot()
   })
 
@@ -140,7 +168,7 @@ describe('postcss-theme-colors', () => {
   })
 
   it('process without nest plugin', async () => {
-    const noNestPluginProcess = css =>
+    const noNestPluginProcess = (css) =>
       postcss([themeColors({colors, groups})]).process(css)
     const result = await noNestPluginProcess(`a { color: cc(G01) }`)
     expect(result.css).toBe('a { color: #eee }')

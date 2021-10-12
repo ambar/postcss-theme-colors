@@ -23,16 +23,20 @@ const resolveColor = (options, theme, group, defaultValue) => {
   return options.colors[color] || defaultValue
 }
 
-module.exports = postcss.plugin('postcss-theme-colors', options => {
+/**
+ * @type {import('postcss').PluginCreator}
+ */
+module.exports = (options) => {
   options = Object.assign({}, defaults, options)
   const reGroup = new RegExp(`\\b${options.function}\\(([^)]+)\\)`, 'g')
 
-  return (style, result) => {
-    const hasPlugin = name =>
-      name.replace(/^postcss-/, '') === options.nestingPlugin ||
-      result.processor.plugins.some(p => p.postcssPlugin === name)
+  return {
+    postcssPlugin: 'postcss-theme-colors',
+    Declaration(decl, {result}) {
+      const hasPlugin = (name) =>
+        name.replace(/^postcss-/, '') === options.nestingPlugin ||
+        result.processor.plugins.some((p) => p.postcssPlugin === name)
 
-    style.walkDecls(decl => {
       const value = decl.value
       if (!value || !reGroup.test(value)) {
         return
@@ -72,6 +76,8 @@ module.exports = postcss.plugin('postcss-theme-colors', options => {
 
       const lightDecl = decl.clone({value: lightValue})
       decl.replaceWith(lightDecl)
-    })
+    },
   }
-})
+}
+
+module.exports.postcss = true
