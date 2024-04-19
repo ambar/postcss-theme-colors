@@ -1,0 +1,9 @@
+html {
+  --flag-light: initial;
+  --flag-dark: ;
+}
+
+html[data-theme="dark"] {
+  --flag-light: ;
+  --flag-dark: initial;
+}

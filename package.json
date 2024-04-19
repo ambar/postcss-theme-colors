@@ -1,28 +1,40 @@
 {
   "name": "postcss-theme-colors",
   "version": "0.2.1",
-  "description": "Theming with cc()",
-  "main": "index.js",
+  "description": "Expand theme color groups to allow non-static handling of relative color syntax or `color-mix()` function.",
   "files": [
-    "index.js"
+    "flags.css",
+    "dist"
   ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
+    "build": "rm -rf dist && pkgroll",
     "prepare": "npm test",
-    "test": "jest",
-    "test:watch": "jest --watch --notify",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
     "release": "standard-version"
   },
   "license": "MIT",
   "peerDependencies": {
-    "postcss": "^6.0.0 || ^7.0.0"
+    "postcss": "^8"
   },
   "devDependencies": {
-    "jest": "^22.0.4",
-    "postcss": "^7.0.6",
-    "postcss-color-function": "^4.0.1",
-    "postcss-custom-properties": "^8.0.9",
-    "postcss-nested": "^4.1.0",
-    "postcss-nesting": "^7.0.0",
-    "standard-version": "^4.3.0"
-  }
+    "@csstools/postcss-global-data": "^2.1.1",
+    "@vitest/coverage-v8": "^1.5.0",
+    "dedent": "^1.5.3",
+    "pkgroll": "^2.0.2",
+    "postcss": "^8.4.38",
+    "postcss-preset-env": "^9.5.6",
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.0"
+  },
+  "packageManager": "yarn@4.1.1"
 }
