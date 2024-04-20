@@ -1,0 +1,14 @@
+html {
+  --G01: var(--flag-light, #eee) var(--flag-dark, #111);
+  --C02a: #f00;
+  --C02b: #0f0;
+  --G01: var(--flag-light, var(--C02a)) var(--flag-dark, var(--C02b));
+}
+
+html {
+  --G03: red;
+}
+
+html[data-theme="dark"] {
+  --G03: blue;
+}
