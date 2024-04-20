@@ -1,6 +1,6 @@
 {
   "name": "postcss-theme-colors",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Expand theme color groups to allow non-static handling of relative color syntax or `color-mix()` function.",
   "files": [
     "flags.css",
