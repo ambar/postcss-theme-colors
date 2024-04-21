@@ -17,7 +17,6 @@
   },
   "scripts": {
     "build": "rm -rf dist && pkgroll",
-    "prepare": "npm test",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "release": "standard-version"
