@@ -16,6 +16,7 @@
     }
   },
   "scripts": {
+    "prepack": "yarn build",
     "build": "rm -rf dist && pkgroll",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",

@@ -62,6 +62,12 @@ postcss([
 
 ```ts
 type Options = {
+  /** color groups */
   colors: Record<string, string | string[]>
+  /**
+   * var flags
+   * @default ['--flag-light', '--flag-dark']
+   */
+  flags?: string[]
 }
 ```

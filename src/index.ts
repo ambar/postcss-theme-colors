@@ -1,25 +1,28 @@
 import {PluginCreator} from 'postcss'
 
-type Options = {
+export type Options = {
+  /** color groups */
   colors: Record<string, string | string[]>
+  /**
+   * var flags
+   * @default ['--flag-light', '--flag-dark']
+   */
+  flags?: string[]
 }
-const defaults: Options = {
+const defaults: Required<Options> = {
   colors: {},
+  flags: ['--flag-light', '--flag-dark'],
 }
 const reRelativeColor = /\(\s*?from/i
 const reMixColor = /\bcolor-mix\(/i
 
 const themeColors: PluginCreator<Options> = (options) => {
-  const {colors} = {...defaults, ...options}
-  const reGroup = new RegExp(
-    `\\b${'var'}\\((${Object.keys(colors).join('|')})\\)`,
-    'g'
-  )
-  const resolveColor = (
-    theme: 'dark' | 'light',
-    group: string,
-    fallback: string
-  ) => {
+  const {
+    colors,
+    flags: [lightFlag, darkFlag],
+  } = {...defaults, ...options}
+  const reGroup = new RegExp(`\\b${'var'}\\((${Object.keys(colors).join('|')})\\)`, 'g')
+  const resolveColor = (theme: 'dark' | 'light', group: string, fallback: string) => {
     const [lightKey, darkKey] = colors[group] || []
     const colorKey = theme === 'light' ? lightKey : darkKey
     if (!colorKey) {
@@ -37,21 +40,11 @@ const themeColors: PluginCreator<Options> = (options) => {
       if (!reGroup.test(value)) {
         return
       }
-      const lightValue = value.replace(reGroup, (match, group) =>
-        resolveColor('light', group, match)
-      )
-      const darkValue = value.replace(reGroup, (match, group) =>
-        resolveColor('dark', group, match)
-      )
+      const lightValue = value.replace(reGroup, (match, group) => resolveColor('light', group, match))
+      const darkValue = value.replace(reGroup, (match, group) => resolveColor('dark', group, match))
       const name = '--v' + hash(value)
-      decl.cloneBefore({
-        prop: name,
-        value: `var(--flag-light, ${lightValue}) var(--flag-dark, ${darkValue})`,
-      })
-      decl.cloneBefore({
-        prop: decl.prop,
-        value: `var(${name})`,
-      })
+      decl.cloneBefore({prop: name, value: `var(${lightFlag}, ${lightValue}) var(${darkFlag}, ${darkValue})`})
+      decl.cloneBefore({prop: decl.prop, value: `var(${name})`})
     },
   }
 }

@@ -1,10 +1,9 @@
 import postcss from 'postcss'
-import type {Plugin} from 'postcss'
 import {test, expect} from 'vitest'
 import dedent from 'dedent'
 import presetEnv from 'postcss-preset-env'
 import globalData from '@csstools/postcss-global-data'
-import themeColors from '../src'
+import themeColors, {type Options} from '../src'
 
 const colors = {
   '--G01': ['#eee', '#111'],
@@ -14,15 +13,7 @@ const colors = {
   '--G03': ['red', 'blue'],
 }
 
-type ExtraOpts = {
-  plugins?: (Plugin | any)[]
-}
-
-const process = async (
-  css: string,
-  options?: Omit<Parameters<typeof themeColors>[0], 'colors'> | null,
-  {plugins = []}: ExtraOpts = {}
-) => {
+const process = async (css: string, options?: Omit<Options, 'colors'> | null) => {
   return postcss([
     globalData({
       files: [
@@ -32,7 +23,6 @@ const process = async (
     }),
     themeColors({colors, ...options}),
     presetEnv(),
-    ...plugins,
   ]).process(css, {
     from: undefined,
   })
@@ -44,7 +34,7 @@ test('use with relative color syntax', async () => {
     border: 1px solid oklch(from var(--G01) .8 c h);
     box-shadow: 0 0 0 2px var(--G01), 0 0 0 4px oklch(from var(--G01) l c h / .1);
   }`
-  const result = await process(input, null, {})
+  const result = await process(input)
   expect(result.css).toMatchInlineSnapshot(`
     "a {
         --v1868641404: var(--flag-light, rgba(238, 238, 238, 0.1)) var(--flag-dark, rgba(17, 17, 17, 0.1));
@@ -72,7 +62,7 @@ test('use with color-mix()', async () => {
       color: color-mix(in srgb, var(--G01), transparent 20%);
     }
     `
-  const result = await process(input, null, {})
+  const result = await process(input)
   expect(result.css).toMatchInlineSnapshot(`
     "
         a {
@@ -124,4 +114,30 @@ test('process undefined group', async () => {
     }`
   const result = await process(input)
   expect(result.css).toBe(input)
+})
+
+test('flags option', async () => {
+  const input = `
+    a {
+      color: rgba(from var(--G03) r g b / .1);
+    }
+    `
+  const result = await process(input, {
+    flags: ['--isLight', '--isDark'],
+  })
+  expect(result.css).toMatchInlineSnapshot(`
+    "
+        a {
+          --v3204038125: var(--isLight, rgba(255, 0, 0, 0.1)) var(--isDark, rgba(0, 0, 255, 0.1));
+          color: rgba(255, 0, 0, 0.1) rgba(0, 0, 255, 0.1);
+          color: var(--v3204038125);
+        }
+
+    @supports (color: lab(from red l 1 1% / calc(alpha + 0.1))) {
+    a {
+          color: rgba(from var(--G03) r g b / .1);
+        }
+    }
+        "
+  `)
 })
