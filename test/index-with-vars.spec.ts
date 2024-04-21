@@ -30,7 +30,7 @@ const process = async (css: string, options?: Omit<Options, 'colors'> | null) =>
 }
 
 test('use with relative color syntax', async () => {
-  const input = `a {
+  const input = dedent`a {
     color: oklch(from var(--G01) l c h / .1);
     border: 1px solid oklch(from var(--G01) .8 c h);
     box-shadow: 0 0 0 2px var(--G01), 0 0 0 4px oklch(from var(--G01) l c h / .1);

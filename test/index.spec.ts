@@ -116,8 +116,29 @@ test('process undefined group', async () => {
   expect(result.css).toBe(input)
 })
 
+test('define prop', async () => {
+  const input = dedent`
+    a {
+      --color: oklch(from var(--G03) l c h);
+    }
+    `
+  const result = await process(input)
+  expect(result.css).toMatchInlineSnapshot(`
+    "a {
+      --v2703874416: var(--flag-light, rgb(255, 0, 0)) var(--flag-dark, rgb(0, 0, 255));
+      --color: var(--v2703874416);
+    }
+
+    @supports (color: lab(from red l 1 1% / calc(alpha + 0.1))) {
+    a {
+      --color: oklch(from var(--G03) l c h);
+    }
+    }"
+  `)
+})
+
 test('flags option', async () => {
-  const input = `
+  const input = dedent`
     a {
       color: rgba(from var(--G03) r g b / .1);
     }
@@ -126,18 +147,16 @@ test('flags option', async () => {
     flags: ['--isLight', '--isDark'],
   })
   expect(result.css).toMatchInlineSnapshot(`
-    "
-        a {
-          --v3204038125: var(--isLight, rgba(255, 0, 0, 0.1)) var(--isDark, rgba(0, 0, 255, 0.1));
-          color: rgba(255, 0, 0, 0.1) rgba(0, 0, 255, 0.1);
-          color: var(--v3204038125);
-        }
+    "a {
+      --v3204038125: var(--isLight, rgba(255, 0, 0, 0.1)) var(--isDark, rgba(0, 0, 255, 0.1));
+      color: rgba(255, 0, 0, 0.1) rgba(0, 0, 255, 0.1);
+      color: var(--v3204038125);
+    }
 
     @supports (color: lab(from red l 1 1% / calc(alpha + 0.1))) {
     a {
-          color: rgba(from var(--G03) r g b / .1);
-        }
+      color: rgba(from var(--G03) r g b / .1);
     }
-        "
+    }"
   `)
 })
