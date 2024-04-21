@@ -17,7 +17,13 @@ Input:
 
 ```css
 a {
+  /* any value with theme (light/dark) color */
   color: oklch(from var(--G01) l c h / 0.1);
+  /* more:
+  border: 1px solid oklch(from var(--G01) .8 c h);
+  box-shadow: 0 0 0 2px var(--G01), 0 0 0 4px oklch(from var(--G01) l c h / .1);
+  --anyVar: value-with-theme-color;
+  */
 }
 ```
 
@@ -50,8 +56,9 @@ postcss([
   require('postcss-preset-env'),
   require('@csstools/postcss-global-data')({
     files: [
-      //
-      'flag.css',
+      // example flags
+      require.resolve('postcss-theme-colors/flag.css'),
+      // your global theme colors
       'vars.css',
     ],
   }),
@@ -65,9 +72,14 @@ type Options = {
   /** color groups */
   colors: Record<string, string | string[]>
   /**
-   * var flags
+   * boolean flags
    * @default ['--flag-light', '--flag-dark']
    */
   flags?: string[]
+  /**
+   * Whether to inject boolean flags, could also be defined in global CSS files
+   * @default false
+   */
+  shouldInjectFlags?: boolean
 }
 ```
