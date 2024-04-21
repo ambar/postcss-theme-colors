@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/ambar/postcss-theme-colors/compare/v1.0.0...v1.1.0) (2024-04-21)
+
+
+### Features
+
+* add flags option ([d4e63cc](https://github.com/ambar/postcss-theme-colors/commit/d4e63cc0e225f31de0d0783cea52179f2f9235ee))
+* add shouldInjectFlags option ([174559e](https://github.com/ambar/postcss-theme-colors/commit/174559e643f999f35f66c43e45ddf8a4ba101255))
+
 ## [1.0.0](https://github.com/ambar/postcss-theme-colors/compare/v0.2.0...v1.0.0) (2024-04-20)
 
 
