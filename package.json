@@ -1,6 +1,6 @@
 {
   "name": "postcss-theme-colors",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Expand theme color groups to allow non-static handling of relative color syntax or `color-mix()` function.",
   "files": [
     "flags.css",
@@ -20,7 +20,7 @@
     "build": "rm -rf dist && pkgroll",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "release": "standard-version"
+    "release": "npx changeset version || echo 'npm install -g @changesets/cli'"
   },
   "license": "MIT",
   "peerDependencies": {
