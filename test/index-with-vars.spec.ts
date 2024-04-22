@@ -119,6 +119,23 @@ test('should not process invalid function name', async () => {
   expect((await process(input)).css).toBe(input)
 })
 
+test('should not process non-group color', async () => {
+  const input = dedent`a {
+    color: oklch(from var(--C02a) l c h / 0.1);;
+  }`
+  expect((await process(input)).css).toMatchInlineSnapshot(`
+    "a {
+      color: rgba(255, 0, 0, 0.1);;
+    }
+
+    @supports (color: lab(from red l 1 1% / calc(alpha + 0.1))) {
+    a {
+      color: oklch(from var(--C02a) l c h / 0.1);;
+    }
+    }"
+  `)
+})
+
 test('with gamut', async () => {
   const input = dedent`a {
     background: oklch(from var(--G01) calc(l * .8) c h);

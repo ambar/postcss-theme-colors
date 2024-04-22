@@ -31,7 +31,10 @@ const themeColors: PluginCreator<Options> = (options) => {
     shouldInjectFlags,
     flags: [lightFlag, darkFlag],
   } = opts
-  const reGroup = new RegExp(`\\b${'var'}\\((${Object.keys(colors).join('|')})\\)`, 'g')
+  const groups = Object.entries(colors)
+    .filter(([, v]) => Array.isArray(v))
+    .map(([k]) => k)
+  const reGroup = new RegExp(`\\b${'var'}\\((${groups.join('|')})\\)`, 'g')
   const resolveColor = (theme: 'dark' | 'light', group: string, fallback: string) => {
     const [lightKey, darkKey] = colors[group] || []
     const colorKey = theme === 'light' ? lightKey : darkKey
