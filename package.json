@@ -27,6 +27,7 @@
     "postcss": "^8"
   },
   "devDependencies": {
+    "@changesets/changelog-git": "^0.2.0",
     "@csstools/postcss-global-data": "^2.1.1",
     "@vitest/coverage-v8": "^1.5.0",
     "dedent": "^1.5.3",
