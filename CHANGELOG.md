@@ -1,5 +1,14 @@
 # Changelog
 
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [1.1.2](https://github.com/ambar/postcss-theme-colors/compare/v1.1.1...v1.1.2) (2024-04-22)
+
+
+### Bug Fixes
+
+* add types to exports ([ccac4c1](https://github.com/ambar/postcss-theme-colors/commit/ccac4c128b39d4073d5bedf5b102c1940354f16c))
+
 ## 1.1.1
 
 ### Patch Changes
