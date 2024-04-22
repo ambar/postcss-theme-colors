@@ -3,6 +3,7 @@ html {
   --C02a: #f00;
   --C02b: #0f0;
   --G01: var(--flag-light, var(--C02a)) var(--flag-dark, var(--C02b));
+  --G01Alias: var(--G01);
 }
 
 html {
