@@ -44,7 +44,7 @@ const themeColors: PluginCreator<Options> = (options) => {
   let injected: Rule[] = []
   return {
     postcssPlugin: 'postcss-theme-colors',
-    Declaration(decl) {
+    DeclarationExit(decl) {
       const value = decl.value
       if (!reRelativeColor.test(value) && !reMixColor.test(value)) {
         return

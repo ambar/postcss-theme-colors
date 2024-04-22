@@ -34,7 +34,6 @@ a {
   --v1868641404: var(--flag-light, rgba(238, 238, 238, 0.1)) var(--flag-dark, rgba(17, 17, 17, 0.1));
   color: rgba(238, 238, 238, 0.1); /* fallback */
   color: var(--v1868641404); /* expand for color scheme */
-  color: oklch(from #f00 l c h / 0.1);
 }
 
 @supports (color: lab(from red l 1 1% / calc(alpha + 0.1))) {

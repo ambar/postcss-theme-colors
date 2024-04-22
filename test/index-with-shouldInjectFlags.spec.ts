@@ -40,7 +40,6 @@ test('use with color group', async () => {
     }
     a {
       --v1868641404: var(--flag-light, rgba(238, 238, 238, 0.1)) var(--flag-dark, rgba(17, 17, 17, 0.1));
-      color: rgba(238, 238, 238, 0.1)  ;
       color: var(--v1868641404);
     }
     @supports (color: lab(from red l 1 1% / calc(alpha + 0.1))) {
@@ -51,7 +50,7 @@ test('use with color group', async () => {
   `)
 })
 
-test('use with color group and ', async () => {
+test('use with color group and :where', async () => {
   const input = dedent`a {
     color: oklch(from var(--G01) l c h / .1);
   }`
@@ -70,7 +69,6 @@ test('use with color group and ', async () => {
     }
     a {
       --v1868641404: var(--flag-light, rgba(238, 238, 238, 0.1)) var(--flag-dark, rgba(17, 17, 17, 0.1));
-      color: rgba(238, 238, 238, 0.1)  ;
       color: var(--v1868641404);
     }
     @supports (color: lab(from red l 1 1% / calc(alpha + 0.1))) {

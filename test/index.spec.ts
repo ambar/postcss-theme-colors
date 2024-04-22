@@ -37,21 +37,20 @@ test('use with relative color syntax', async () => {
   const result = await process(input)
   expect(result.css).toMatchInlineSnapshot(`
     "a {
-        --v1868641404: var(--flag-light, rgba(238, 238, 238, 0.1)) var(--flag-dark, rgba(17, 17, 17, 0.1));
-        color: rgba(238, 238, 238, 0.1)  ;
-        color: var(--v1868641404);
-        --v3579442204: var(--flag-light, 1px solid rgb(190, 190, 190)) var(--flag-dark, 1px solid rgb(190, 190, 190));
-        border: var(--v3579442204);
-        --v1397801114: var(--flag-light, 0 0 0 2px #eee, 0 0 0 4px rgba(238, 238, 238, 0.1)) var(--flag-dark, 0 0 0 2px #111, 0 0 0 4px rgba(17, 17, 17, 0.1));
-        box-shadow: var(--v1397801114);
-      }
+      --v1868641404: var(--flag-light, rgba(238, 238, 238, 0.1)) var(--flag-dark, rgba(17, 17, 17, 0.1));
+      color: var(--v1868641404);
+      --v3579442204: var(--flag-light, 1px solid rgb(190, 190, 190)) var(--flag-dark, 1px solid rgb(190, 190, 190));
+      border: var(--v3579442204);
+      --v1397801114: var(--flag-light, 0 0 0 2px #eee, 0 0 0 4px rgba(238, 238, 238, 0.1)) var(--flag-dark, 0 0 0 2px #111, 0 0 0 4px rgba(17, 17, 17, 0.1));
+      box-shadow: var(--v1397801114);
+    }
 
     @supports (color: lab(from red l 1 1% / calc(alpha + 0.1))) {
     a {
-        color: oklch(from var(--G01) l c h / .1);
-        border: 1px solid oklch(from var(--G01) .8 c h);
-        box-shadow: 0 0 0 2px var(--G01), 0 0 0 4px oklch(from var(--G01) l c h / .1);
-      }
+      color: oklch(from var(--G01) l c h / .1);
+      border: 1px solid oklch(from var(--G01) .8 c h);
+      box-shadow: 0 0 0 2px var(--G01), 0 0 0 4px oklch(from var(--G01) l c h / .1);
+    }
     }"
   `)
 })
@@ -66,7 +65,6 @@ test('use with color-mix()', async () => {
   expect(result.css).toMatchInlineSnapshot(`
     "a {
       --v546761730: var(--flag-light, rgba(238, 238, 238, 0.8)) var(--flag-dark, rgba(17, 17, 17, 0.8));
-      color: rgba(238, 238, 238, 0.8)  ;
       color: var(--v546761730);
     }
 
@@ -147,7 +145,6 @@ test('flags option', async () => {
   expect(result.css).toMatchInlineSnapshot(`
     "a {
       --v3204038125: var(--isLight, rgba(255, 0, 0, 0.1)) var(--isDark, rgba(0, 0, 255, 0.1));
-      color: rgba(255, 0, 0, 0.1) rgba(0, 0, 255, 0.1);
       color: var(--v3204038125);
     }
 
